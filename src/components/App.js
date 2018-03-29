@@ -15,8 +15,8 @@ class App extends React.Component {
 
     return(
         <div className="container">
-        <Home name={"Max"} age={27} user={user}/>
-        <CheckBox />
+        <Home name={"Max"} age={27}/>
+    
         </div>
     );
  }
