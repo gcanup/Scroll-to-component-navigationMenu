@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CheckBox from './components/CheckBox';
+import App from './components/App';
 
 
-
-
-
-
-ReactDOM.render(<CheckBox />, document.getElementById('root'));
+ReactDOM.render(
+        <App />,
+        document.getElementById('root'));
