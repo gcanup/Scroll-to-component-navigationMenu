@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import '../index.css';
 import Home from './Home';
 import Test from './Test';
-import Linkmain from './Linkmain';
+import Linkcomponent from './Linkcomponent';
 
 
 class App extends React.Component {
@@ -12,11 +12,23 @@ class App extends React.Component {
         super();
 
         this.state = {
-            homelink: "home"
+            homelink: "home",
+            page: 60,
+            homeMounted: true
         };
     }
 
+    onChangeHomeMounted() {
+        this.setState({
+            homeMounted: !this.state.homeMounted
+        })
+    }
 
+    changePage(newpage) {
+        this.setState({
+            page: newpage
+        })
+    }
 
     changeName(newName) {
         this.setState({
@@ -29,11 +41,23 @@ class App extends React.Component {
             level: 5
         }
 
+        let homeCmp = "";
+        if (this.state.homeMounted) {
+            homeCmp =                 
+                    <Home 
+                    name="Max" age={27} 
+                    user={user} 
+                    changelink={this.changeName.bind(this)} 
+                    pageprop={this.changePage.bind(this)} 
+                    initialPagenum= {this.state.page} />
+        }
         return(
             <div className="container">
-                <Home name="Max" age={27} user={user} changelink={this.changeName.bind(this)} />
+
                 <Test int={50} homelink={this.state.homelink} /> <br /> <hr />
-                <Linkmain />
+                <Linkcomponent amount={this.state.page} And it will be changed />
+                {homeCmp}
+                <button onClick={this.onChangeHomeMounted.bind(this)}>Change mount</button>
 
             </div>   
 
