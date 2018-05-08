@@ -1,0 +1,17 @@
+.container {
+	border: solid 2px red;
+}
+.check {
+	margin-top: 100px;
+	border: solid 2px yellow;
+	height: 200px;
+	position: relative;
+}
+.text {
+	border: solid 2px green;
+	height: 100px;
+	text-align: center;
+}
+form {
+	position: relative;
+}
